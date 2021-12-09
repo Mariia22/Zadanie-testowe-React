@@ -40,12 +40,14 @@ function App() {
   useEffect(() => { getRandomQuote() }, [allQuotes])
 
   return (
-    <div >
+    <div className="app">
       {error && <div>{error.message}</div>}
-      <p>{currentQuote.quote}</p>
-      <p>{currentQuote.author}</p>
-      <button disabled={isDisabled} onClick={getPreviousQuote}>Previous</button>
-      <button onClick={getRandomQuote}>Random quote</button>
+      <p className="app__quote">{currentQuote.quote}</p>
+      <p className="app__author">{currentQuote.author}</p>
+      <div className="app__buttons">
+        <button disabled={isDisabled} onClick={getPreviousQuote} className="app__button">Previous</button>
+        <button onClick={getRandomQuote} className="app__button">Random quote</button>
+      </div>
     </div>
   );
 }
